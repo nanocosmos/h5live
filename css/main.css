@@ -83,22 +83,30 @@ body {
 }
 
 button {
-    background-color: #d84a38;
+    background-color: #ee830a;
     border: none;
     border-radius: 2px;
-    color: white !important;
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.8em;
-    margin: 0 0 1em 0;
-    padding: 0.5em 0.7em 0.6em 0.7em;
+    color: white;
+    font-weight: bold;
+    line-height: 1.428571429;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-size: 14px;
 }
 
     button:active {
-        background-color: #cf402f;
+        background-color: #ee830a;
     }
 
     button:hover {
-        background-color: #cf402f;
+        background-color: #333;
+        border-color: #FFA43E;
+        color: #ee830a;
     }
 
     button[disabled] {
@@ -106,7 +114,7 @@ button {
     }
 
         button[disabled]:hover {
-            background-color: #d84a38;
+            background-color: #FFA43E;
         }
 
 code {
@@ -130,6 +138,8 @@ h1 {
     font-weight: 500;
     margin: 0 0 0.2em 0;
     padding: 0 0 0.2em 0;
+    color: #FFA43E;
+    font-size: 38px;
 }
 
 h2 {
@@ -167,6 +177,10 @@ input[type=text] {
 input[type=radio] {
     position: relative;
     top: -1px;
+}
+
+input[type=range] {
+    max-width: 80px;
 }
 
 p {
@@ -239,6 +253,12 @@ video {
     h1 {
         font-size: 24px;
     }
+
+    div#container {
+        margin: 0 auto 0 auto;
+        max-width: none;
+        padding: 0;
+    }
 }
 
 @media screen and (max-width: 550px) {
@@ -279,9 +299,12 @@ pre {
 }
 
 .player {
-    width: 640px;
-    height: 360px;
+    width: 100%;
     border: 1px solid black;
+}
+
+.responsive {
+    padding-top: 56.25%;
 }
 
 @media (min-width: 1200px) {
@@ -300,4 +323,120 @@ pre {
     .container {
         width: 750px;
     }
+}
+
+
+#streamsWrapper > div {
+    padding: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    border: 2px solid black;
+}
+
+#streamsWrapper > div > .streamsCurrent {
+    font-weight: 700;
+    color: #ed7d0e;
+}
+
+.row {
+    display: flex;
+}
+
+.row-flex {
+    display: flex;
+    justify-content: space-between
+}
+
+.row-flex-left {
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+.row-flex-right {
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+.row-padding {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+.col-12 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.streamQualityWrapper {
+    padding: 5px 0px;
+    align-items: flex-start;
+}
+
+.streamQualityWrapper > div, .streamQualityWrapper .row > div {
+    padding-right: 10px;
+}
+
+.streamIndex {
+    font-size: 12px;
+    color:#aaa;
+    font-weight: 500;
+}
+
+.streamIndex--active {
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.labelStreamname {
+    font-size: 14px;
+    font-weight: 500;
+    color:#aaa;
+}
+
+.labelStreamname--active {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+.labelBitrate, .labelResolution, .labelFrameRate {
+    font-size: 14px;
+    font-weight: 500;
+    color: #FFA43E;
+}
+
+.shake {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }
